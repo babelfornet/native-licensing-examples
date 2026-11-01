@@ -25,6 +25,8 @@ def main():
     if int(platform.mac_ver()[0].split('.')[0]) < 15:
         raise ValueError('This preview SDK targets macOS 15 or later.')
     manifest = json.loads((ROOT / 'sdk/manifest.json').read_text())
+    if not manifest.get('available', False) and not args.archive:
+        raise ValueError('The native ABI package has not been released yet. These source examples are prepared for the coordinated SDK release. A supplied preview archive can be tested with --archive.')
     destination = ROOT / '.sdk'
     if destination.exists():
         info_path = destination / 'BUILD-INFO.json'

@@ -1,8 +1,10 @@
 # Go native licensing example
 
-[Source](main.go) · [Full setup and supported modes](../README.md) · [Documentation](https://docs.babelfor.net/licensing/examples/native-sdk)
+[Source](main.go) · [Full setup and supported modes](../README.md)
 
-From the repository root:
+The native ABI library is awaiting release. Automatic SDK downloads are disabled until that release. See the root README for testing a supplied preview archive.
+
+Once the SDK is available, run from the repository root:
 
 ```sh
 python3 scripts/setup-sdk.py

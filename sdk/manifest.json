@@ -5,5 +5,6 @@
   "minimumMacOS": "15.0",
   "sourceCommit": "e94fad5d3665ebb0c26b969e4b46f19c4c14da6c",
   "url": "https://github.com/babelfornet/native-licensing-examples/releases/download/v0.1.0-preview.1/babel-licensing-native-0.1.0-preview.1-macos-arm64.tar.gz",
-  "sha256": "e027f150abc20a63c8531938cfc439483440f44c00944550f1851f8d51eece98"
+  "sha256": "e027f150abc20a63c8531938cfc439483440f44c00944550f1851f8d51eece98",
+  "available": false
 }

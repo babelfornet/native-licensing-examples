@@ -1,8 +1,10 @@
 # Babel Licensing native examples
 
+**Release status:** the native ABI library has not been released yet. These public source examples are prepared and tested for the coordinated SDK release. Automatic runtime downloads are disabled.
+
 Use Babel Licensing from **Rust, Go, C++ or Python** to verify a signed license in your own application. Each example loads an XML license, verifies its publisher signature, validates runtime expiry and enables a named feature. A rejected file exits with a nonzero status.
 
-[Read the documentation](https://docs.babelfor.net/licensing/examples/native-sdk) or open an example:
+Open an example:
 
 | Language | Example | Client dependency |
 |---|---|---|
@@ -13,7 +15,7 @@ Use Babel Licensing from **Rust, Go, C++ or Python** to verify a signed license 
 
 ## Preview platform
 
-The downloadable SDK preview is for **Apple Silicon Macs, targeting macOS 15 or later**. It has been tested on macOS 27.0.1. Windows, Linux and Intel Mac packages are not available in this preview. The native C ABI can support other language bindings; this repository tests the four examples above.
+The prepared SDK preview targets **Apple Silicon Macs, targeting macOS 15 or later**. It has been tested on macOS 27.0.1. Windows, Linux and Intel Mac packages are not available in this preview. The native C ABI can support other language bindings; this repository tests the four examples above.
 
 This preview supports offline XML licenses, RSA-SHA1, ECDSA P-256, absolute license expiry and feature expiry. Compact licenses, online activation and stateful restrictions such as run counts, days from first use, hardware, domain and custom restrictions are not implemented. The validator refuses licenses containing unsupported restriction nodes.
 
@@ -32,7 +34,7 @@ python3 scripts/setup-sdk.py
 ./run.sh cpp
 ```
 
-Run whichever language you use. The setup script downloads a pinned SDK release, checks SHA-256 and installs it in `.sdk`. The archive includes Botan and its native dependencies, so it does not require a separate Homebrew Botan installation. Read `.sdk/EULA.md` and `.sdk/THIRD_PARTY_NOTICES.txt` for the SDK's terms and notices. The MIT license in this repository covers the example sources; the SDK binaries have their own terms.
+Run whichever language you use. Once the native ABI is released, the setup script will download the pinned SDK package, check SHA-256 and install it in `.sdk`. Until then, automatic setup reports that the package is not released. If Babel has supplied you with the matching preview archive, use `python3 scripts/setup-sdk.py --archive /absolute/path/sdk.tar.gz`. The archive includes Botan and its native dependencies, so it does not require a separate Homebrew Botan installation. Read `.sdk/EULA.md` and `.sdk/THIRD_PARTY_NOTICES.txt` for the SDK's terms and notices. The MIT license in this repository covers the example sources; the SDK binaries have their own terms.
 
 Successful output:
 
