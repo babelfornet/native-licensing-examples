@@ -1,0 +1,10 @@
+<Licenses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <License Id="native-demo-no-feature" type="Demo">
+    <Licensee name="Example application developer" />
+  </License>
+  <Signature>
+    <Algorithm name="RSA" />
+    <RSAKeys>MIIBIDANBgkqhkiG9w0BAQEFAAOCAQ0AMIIBCAKCAQEAhiiWcvDB3Afy0sq3mtj7rvIGtBSuH9uUWpl52k6t/nKc62A08e+gWcWiL4DfgkegBjy/GS9/6pLzR+F9xLfn0ySqkKRG88cexrJM1KaPiriAnrr4wcxrS/1GmOsmSWUyZ1ALffzS3pINLpbhCUSQfx7JFVGBgi89r22GIBrGJ0WAH7b2CvSQguOY3k95N0RKXQMG2cwceSPs1uaWaCyTjkBJP5k32aSE5k8Wso5DJ6YYN2+DyLaBMZE7G3M4TqZ+UUJyOvXsij2+Hdbkm5izk3FWkTcAQfaMhmlUL3c6mVwybebUBlBQTL5dxIplHMNuDpZdCBBr8Uc0QA4UjN9UrwIBAw==</RSAKeys>
+    <SignatureValue>Mw8Jv9zqLUDJ4+HfsEFoQD6YKhy0nPiVa8g3cxztJxZGGCLuEQ6TvzKx2R+6hOrMesiy2JIiDgxZi+OVgXKIpSFoN4ijHNzJArcnkYc8YmvD6IfLPiRa1LBPLprR+FVYvorGeaHBxzJeUzMB5tAXGjBq5PTj7Gf/9ZjIu3DkBbD60rKunLOqkxNR5IZwLVTJ6FbV0+GXxiKmUGAtq7mJPOi6F5WuP5pnAJq5/Bj1s5fxRntN8buYXIOLGkwdBgpwV3MbPRgi0JHgqkjYu56piwDKTAWQbc27rQAXwVTLg4Pg0kiJXJTqQwxbQ/eV5U6AMWlkf8NRmMcnakh20ikzWQ==</SignatureValue>
+  </Signature>
+</Licenses>
