@@ -1,9 +1,20 @@
 """Verify a publisher-signed XML license through the Babel native C ABI."""
 import ctypes as c
+import platform
 from pathlib import Path
 import sys
+import os
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
+
+def runtime_path():
+    system = platform.system()
+    names = {'Darwin':'lib/libBabelLicensingNative.dylib',
+             'Linux':'lib/libBabelLicensingNative.so','Windows':'bin/BabelLicensingNative.dll'}
+    if system not in names:
+        raise ValueError('Supported targets: macOS, Linux and Windows')
+    return ROOT / '.sdk' / names[system]
 
 def read_cstring(path, maximum):
     with open(path, 'rb') as stream:
@@ -13,13 +24,16 @@ def read_cstring(path, maximum):
     return data
 
 def run():
+    if sys.argv[1:2] == ['--online']:
+        from online import run_online
+        return run_online(sys.argv[2:])
     args = sys.argv[1:]
     if len(args) > 4:
         raise ValueError('Usage: main.py [license.xml [publisher-key.txt [RSA|ECDSA [feature]]]]')
     license_path, key_path, algorithm, feature = (args + [None] * 4)[:4]
     text = read_cstring(license_path or ROOT / 'demo/perpetual.xml', 1024 * 1024)
     key = read_cstring(key_path or ROOT / 'demo/publisher-key.txt', 16384)
-    lib = c.CDLL(str(ROOT / '.sdk/lib/libBabelLicensingNative.dylib'))
+    lib = c.CDLL(str(runtime_path()))
     lib.babel_abi_version.restype = c.c_int
     lib.babel_license_load.argtypes = [c.c_char_p, c.POINTER(c.c_void_p)]
     lib.babel_license_verify.argtypes = [c.c_void_p, c.c_char_p, c.c_char_p]

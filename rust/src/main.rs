@@ -1,5 +1,6 @@
+mod online;
 // Verify a publisher-signed XML license through the Babel native C ABI.
-use std::ffi::{c_char, c_int, c_void, CString};
+use std::ffi::{CString, c_char, c_int, c_void};
 use std::io::Read;
 unsafe extern "C" {
     fn babel_abi_version() -> c_int;
@@ -39,6 +40,9 @@ fn success(status: c_int, operation: &str) -> Result<(), String> {
 }
 fn run() -> Result<(), String> {
     let given: Vec<String> = std::env::args().skip(1).collect();
+    if given.len() == 2 && given[0] == "--online" {
+        return online::run(&given[1]);
+    }
     if given.len() > 4 {
         return Err(
             "Usage: native-example [license.xml [publisher-key.txt [RSA|ECDSA [feature]]]]".into(),

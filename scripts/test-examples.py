@@ -1,3 +1,4 @@
+import sys
 """Run each language against accepted and rejected signed files."""
 from pathlib import Path
 import subprocess
@@ -20,7 +21,7 @@ with tempfile.TemporaryDirectory() as temp:
             (['demo/perpetual.xml', str(wrong_key)], False, 'status 3'),
         ]
         for args, accepted, message in cases:
-            result = subprocess.run([str(ROOT / 'run.sh'), language, *args], cwd=ROOT, text=True, capture_output=True)
+            result = subprocess.run([sys.executable,str(ROOT/'scripts/run-example.py'),language,*args], cwd=ROOT, text=True, capture_output=True)
             output = result.stdout + result.stderr
             if (result.returncode == 0) != accepted or message not in output:
                 raise SystemExit(f'{language} {args}: unexpected result {result.returncode}\n{output}')

@@ -1,10 +1,136 @@
 {
-  "version": "0.1.0-preview.1",
+  "schemaVersion": 2,
   "abi": 2,
-  "platform": "macos-arm64",
-  "minimumMacOS": "15.0",
-  "sourceCommit": "e94fad5d3665ebb0c26b969e4b46f19c4c14da6c",
-  "url": "https://github.com/babelfornet/native-licensing-examples/releases/download/v0.1.0-preview.1/babel-licensing-native-0.1.0-preview.1-macos-arm64.tar.gz",
-  "sha256": "e027f150abc20a63c8531938cfc439483440f44c00944550f1851f8d51eece98",
-  "available": false
+  "available": false,
+  "releaseStatus": "unreleased",
+  "packages": {
+    "macos-arm64": {
+      "packageVersion": "12.2.0-rc.1",
+      "releaseStatus": "unreleased",
+      "abi": 2,
+      "platform": "macos-arm64",
+      "libraryVersion": "12.2.0",
+      "sourceCommit": "9e70b59d2934dc7f7d89ba257e6eadaaf6d93427",
+      "sourceDirty": false,
+      "botan": {
+        "version": "3.13.0",
+        "linkage": "static",
+        "sourceSha256": "12f5a8358890bbee82edfe9d2e7769b0a610b6dd0e0698aea13d20a675d84620",
+        "modules": [
+          "auto_rng",
+          "ecdsa",
+          "emsa_pkcs1",
+          "hex",
+          "md5",
+          "pem",
+          "rsa",
+          "sha1",
+          "sha2_32",
+          "sha2_64",
+          "system_rng",
+          "pcurves_secp192r1",
+          "pcurves_secp256r1",
+          "pcurves_secp384r1",
+          "pcurves_secp521r1"
+        ]
+      },
+      "runtimeLibraries": [
+        "libBabelLicensingNative.dylib"
+      ],
+      "minimumMacOS": "15.0",
+      "signing": "ad-hoc local validation; not a notarized release",
+      "sha256": "eb3abd85f8bcd64ec710f90f8ea092965507657b37e406715cd9c035386d6c9c",
+      "available": false,
+      "archiveName": "babel-licensing-native-12.2.0-rc.1-macos-arm64.zip"
+    },
+    "linux-x64": {
+      "packageVersion": "12.2.0-rc.1",
+      "releaseStatus": "unreleased",
+      "abi": 2,
+      "platform": "linux-x64",
+      "libraryVersion": "12.2.0",
+      "sourceCommit": "9e70b59d2934dc7f7d89ba257e6eadaaf6d93427",
+      "sourceDirty": false,
+      "botan": {
+        "version": "3.13.0",
+        "linkage": "static",
+        "sourceSha256": "12f5a8358890bbee82edfe9d2e7769b0a610b6dd0e0698aea13d20a675d84620",
+        "modules": [
+          "auto_rng",
+          "ecdsa",
+          "emsa_pkcs1",
+          "hex",
+          "md5",
+          "pem",
+          "rsa",
+          "sha1",
+          "sha2_32",
+          "sha2_64",
+          "system_rng",
+          "pcurves_secp192r1",
+          "pcurves_secp256r1",
+          "pcurves_secp384r1",
+          "pcurves_secp521r1"
+        ]
+      },
+      "runtimeLibraries": [
+        "libBabelLicensingNative.so"
+      ],
+      "minimumGlibc": "2.34",
+      "tls": "statically linked OpenSSL; OS CA trust store",
+      "opensslBuildPackage": "3.0.2-0ubuntu1.30",
+      "curl": {
+        "version": "8.23.0",
+        "linkage": "static",
+        "sourceSha256": "8dadd7d2536a314f982ad05a651b713f426bf7d02cc2c76cffb9796f2218e6c5"
+      },
+      "sha256": "ce8e3b53090aaf03f612ec0399a57e8f1d067530aae13c6597b420387eae10ec",
+      "available": false,
+      "archiveName": "babel-licensing-native-12.2.0-rc.1-linux-x64.zip"
+    },
+    "windows-x64": {
+      "packageVersion": "12.2.0-rc.1",
+      "releaseStatus": "unreleased",
+      "abi": 2,
+      "platform": "windows-x64",
+      "libraryVersion": "12.2.0",
+      "sourceCommit": "9e70b59d2934dc7f7d89ba257e6eadaaf6d93427",
+      "sourceDirty": false,
+      "botan": {
+        "version": "3.13.0",
+        "linkage": "static",
+        "sourceSha256": "12f5a8358890bbee82edfe9d2e7769b0a610b6dd0e0698aea13d20a675d84620",
+        "modules": [
+          "auto_rng",
+          "ecdsa",
+          "emsa_pkcs1",
+          "hex",
+          "md5",
+          "pem",
+          "rsa",
+          "sha1",
+          "sha2_32",
+          "sha2_64",
+          "system_rng",
+          "pcurves_secp192r1",
+          "pcurves_secp256r1",
+          "pcurves_secp384r1",
+          "pcurves_secp521r1"
+        ]
+      },
+      "runtimeLibraries": [
+        "BabelLicensingNative.dll"
+      ],
+      "tls": "Windows Schannel, OS trust store",
+      "signing": "unsigned local test build; not a public release",
+      "curl": {
+        "version": "8.23.0",
+        "linkage": "static",
+        "sourceSha256": "8dadd7d2536a314f982ad05a651b713f426bf7d02cc2c76cffb9796f2218e6c5"
+      },
+      "sha256": "ef9bf37b7e104f63c41a5b70c5539bca84de0288151995020f4e7b39e9943c33",
+      "available": false,
+      "archiveName": "babel-licensing-native-12.2.0-rc.1-windows-x64.zip"
+    }
+  }
 }

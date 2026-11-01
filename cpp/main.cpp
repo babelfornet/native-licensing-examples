@@ -20,8 +20,11 @@ static void success(babel_status status, const char* operation) {
     if (status != BABEL_OK)
         throw std::runtime_error(std::string(operation) + " failed (status " + std::to_string(status) + ")");
 }
+#include "online.hpp"
+
 int main(int argc, char** argv) {
     try {
+        if (argc == 3 && std::string(argv[1]) == "--online") return runOnline(argv[2]);
         if (argc > 5) throw std::runtime_error("Usage: native-example [license.xml [publisher-key.txt [RSA|ECDSA [feature]]]]");
         if (babel_abi_version() != 2) throw std::runtime_error("This example requires native ABI v2");
         auto text = readFile(argc > 1 ? argv[1] : "demo/perpetual.xml", 1024 * 1024);

@@ -17,3 +17,10 @@ The assembly directory must contain `Babel.Licensing.dll` and `Crypto.dll`. The 
 The second argument is the trial duration in days. Trial files use an absolute `ExpireDate`. Stateful trial restrictions remain unsupported by the native preview. Files named `expired.xml`, `no-feature.xml` and `restricted.xml` exercise refusal paths.
 
 The `--repository-fixtures` switch is only for maintaining this repository's demonstration data. It gives the static trial a 2099 expiry; omit that switch for an actual time-limited trial.
+
+The issuer also writes `activation.key` (signed Hardware binding), `floating.key`,
+`wrong-machine.key` and `unsupported-online.key` for local protocol tests.
+`BABEL_MACHINE_ID` selects the signed machine identity; it defaults to
+`native-example-machine` for the local demo. Ordinary issuance uses a 30-day
+expiry; `--repository-fixtures` gives reusable demo payloads expiring in 2099.
+The checked-in files are public signed fixtures only. Never distribute `private/`.

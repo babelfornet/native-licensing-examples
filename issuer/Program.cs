@@ -31,3 +31,18 @@ foreach (var kind in new[] { "perpetual", "trial", "expired", "no-feature", "res
 }
 Console.WriteLine("Wrote sample licenses and public key to " + output);
 Console.WriteLine("Keep " + privatePath + " on your publisher machine. Do not distribute or commit it.");
+
+// Signed payloads for the loopback online protocol fixture. The production
+// service uses the same compact ASCII format for node-locked activation keys.
+var machineId = Environment.GetEnvironmentVariable("BABEL_MACHINE_ID") ?? "native-example-machine";
+foreach (var kind in new[] { "activation", "floating", "wrong-machine", "unsupported-online" }) {
+    var license = new StringLicense { Id = "native-demo-" + kind, Type = "Demo",
+        IssueDate = DateTime.UtcNow, ExpireDate = demoFixtures ? new DateTime(2099,1,1,0,0,0,DateTimeKind.Utc) : DateTime.UtcNow.AddDays(trialDays) };
+    license.Features.Add(new Feature("Pro"));
+    if (kind == "activation" || kind == "wrong-machine")
+        license.Restrictions.Add(new HardwareRestriction { HardwareKey = kind == "wrong-machine" ? "another-machine" : machineId });
+    if (kind == "unsupported-online") license.Restrictions.Add(new TrialRestriction { ExpireDays = 7 });
+    var builder = new StringLicenseBuilder { SignatureProvider = signer, Format = StringFormat.Ascii };
+    builder.AddOrUpdate(license); builder.Sign();
+    File.WriteAllText(Path.Combine(output, kind + ".key"), builder.ToReadableString(string.Empty));
+}
