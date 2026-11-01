@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
   "abi": 2,
-  "available": false,
-  "releaseStatus": "unreleased",
+  "available": true,
+  "releaseStatus": "stable",
   "packages": {
     "macos-arm64": {
-      "packageVersion": "12.2.0-rc.1",
-      "releaseStatus": "unreleased",
+      "packageVersion": "12.2.0",
+      "releaseStatus": "release-build; publication is recorded separately",
       "abi": 2,
       "platform": "macos-arm64",
       "libraryVersion": "12.2.0",
-      "sourceCommit": "9e70b59d2934dc7f7d89ba257e6eadaaf6d93427",
+      "sourceCommit": "424b1083e6474fa5c7caa87470ee892bb2512839",
       "sourceDirty": false,
       "botan": {
         "version": "3.13.0",
@@ -38,18 +38,19 @@
         "libBabelLicensingNative.dylib"
       ],
       "minimumMacOS": "15.0",
-      "signing": "ad-hoc local validation; not a notarized release",
-      "sha256": "eb3abd85f8bcd64ec710f90f8ea092965507657b37e406715cd9c035386d6c9c",
-      "available": false,
-      "archiveName": "babel-licensing-native-12.2.0-rc.1-macos-arm64.zip"
+      "signing": "Developer ID signature verified; notarization receipt supplied separately",
+      "sha256": "977105ae803e76636201b3d9af14581b604e287fa02de28fa30525a5ea6f3c14",
+      "available": true,
+      "archiveName": "babel-licensing-native-12.2.0-macos-arm64.zip",
+      "url": "https://github.com/babelfornet/native-licensing-examples/releases/download/v12.2.0/babel-licensing-native-12.2.0-macos-arm64.zip"
     },
     "linux-x64": {
-      "packageVersion": "12.2.0-rc.1",
-      "releaseStatus": "unreleased",
+      "packageVersion": "12.2.0",
+      "releaseStatus": "release-build; publication is recorded separately",
       "abi": 2,
       "platform": "linux-x64",
       "libraryVersion": "12.2.0",
-      "sourceCommit": "9e70b59d2934dc7f7d89ba257e6eadaaf6d93427",
+      "sourceCommit": "424b1083e6474fa5c7caa87470ee892bb2512839",
       "sourceDirty": false,
       "botan": {
         "version": "3.13.0",
@@ -84,17 +85,18 @@
         "linkage": "static",
         "sourceSha256": "8dadd7d2536a314f982ad05a651b713f426bf7d02cc2c76cffb9796f2218e6c5"
       },
-      "sha256": "ce8e3b53090aaf03f612ec0399a57e8f1d067530aae13c6597b420387eae10ec",
-      "available": false,
-      "archiveName": "babel-licensing-native-12.2.0-rc.1-linux-x64.zip"
+      "sha256": "13221a0c41442d7935aa3a283c7386b2cb64851de1c44ff9d029b028454dda22",
+      "available": true,
+      "archiveName": "babel-licensing-native-12.2.0-linux-x64.zip",
+      "url": "https://github.com/babelfornet/native-licensing-examples/releases/download/v12.2.0/babel-licensing-native-12.2.0-linux-x64.zip"
     },
     "windows-x64": {
-      "packageVersion": "12.2.0-rc.1",
-      "releaseStatus": "unreleased",
+      "packageVersion": "12.2.0",
+      "releaseStatus": "release-build; publication is recorded separately",
       "abi": 2,
       "platform": "windows-x64",
       "libraryVersion": "12.2.0",
-      "sourceCommit": "9e70b59d2934dc7f7d89ba257e6eadaaf6d93427",
+      "sourceCommit": "424b1083e6474fa5c7caa87470ee892bb2512839",
       "sourceDirty": false,
       "botan": {
         "version": "3.13.0",
@@ -122,15 +124,17 @@
         "BabelLicensingNative.dll"
       ],
       "tls": "Windows Schannel, OS trust store",
-      "signing": "unsigned local test build; not a public release",
+      "signing": "Authenticode verified; SHA-256 with RFC 3161 timestamp",
+      "signerThumbprint": "17195275FCDBDF2B77E7534CE3E36DBF52086353",
       "curl": {
         "version": "8.23.0",
         "linkage": "static",
         "sourceSha256": "8dadd7d2536a314f982ad05a651b713f426bf7d02cc2c76cffb9796f2218e6c5"
       },
-      "sha256": "ef9bf37b7e104f63c41a5b70c5539bca84de0288151995020f4e7b39e9943c33",
-      "available": false,
-      "archiveName": "babel-licensing-native-12.2.0-rc.1-windows-x64.zip"
+      "sha256": "75cf9a34c98606d87002c098b8a09e519467ba9086191291a303c7c9b6343cba",
+      "available": true,
+      "archiveName": "babel-licensing-native-12.2.0-windows-x64.zip",
+      "url": "https://github.com/babelfornet/native-licensing-examples/releases/download/v12.2.0/babel-licensing-native-12.2.0-windows-x64.zip"
     }
   }
 }

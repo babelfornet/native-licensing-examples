@@ -1,6 +1,6 @@
 # Babel Licensing native examples
 
-**Release status:** the native ABI library has not been released yet. These public source examples are prepared and tested for the coordinated SDK release. Automatic runtime downloads are disabled.
+**Babel Licensing Native SDK 12.2.0 · C ABI 2.** Platform ZIPs are available in the [12.2.0 release](https://github.com/babelfornet/native-licensing-examples/releases/tag/v12.2.0). The setup script downloads the pinned package for your platform and verifies SHA-256.
 
 Use Babel Licensing from **Rust, Go, C++ or Python** to verify a signed license in your own application. Each example verifies offline XML/compact licenses and demonstrates online activation and floating acquire/heartbeat/release through the same native C ABI. A rejected file exits with a nonzero status.
 
@@ -15,7 +15,7 @@ Open an example:
 
 ## Platform packages
 
-The coordinated release includes separate packages for these targets:
+The release includes separate packages for these targets:
 
 | Platform | Single SDK runtime | Link-time input |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ python3 scripts/setup-sdk.py
 ./run.sh cpp
 ```
 
-Run whichever language you use. Once the native ABI is released, the setup script will download the pinned SDK package, check SHA-256 and install it in `.sdk`. Until then, automatic setup reports that the package is not released. If Babel has supplied you with the matching preview archive, use `python3 scripts/setup-sdk.py --archive /absolute/path/sdk.zip`. The runtime is **one file**: `.sdk/lib/libBabelLicensingNative.dylib` on macOS, `.sdk/lib/libBabelLicensingNative.so` on Linux, or `.sdk/bin/BabelLicensingNative.dll` on Windows. Required Botan modules are linked statically into it: do not install or distribute a separate Botan or SQLite dylib. macOS system libraries are used normally. Read `.sdk/EULA.md` and `.sdk/licenses/` for SDK terms and third-party notices. The MIT license in this repository covers the example sources; the SDK binaries have their own terms.
+Run whichever language you use. The setup script downloads the pinned SDK package, checks SHA-256 and installs it in `.sdk`. To use a ZIP you already downloaded, run `python3 scripts/setup-sdk.py --archive /absolute/path/sdk.zip`. The runtime is **one file**: `.sdk/lib/libBabelLicensingNative.dylib` on macOS, `.sdk/lib/libBabelLicensingNative.so` on Linux, or `.sdk/bin/BabelLicensingNative.dll` on Windows. Required Botan modules are linked statically into it: do not install or distribute a separate Botan or SQLite dylib. macOS system libraries are used normally. Read `.sdk/EULA.md` and `.sdk/licenses/` for SDK terms and third-party notices. The MIT license in this repository covers the example sources; the SDK binaries have their own terms.
 
 Successful output:
 
@@ -70,7 +70,7 @@ License verified. Feature Pro enabled.
 
 Replace `python` with `rust`, `go` or `cpp`. These files are signed demo licenses for this example application, not Babel Obfuscator product licenses. The checked-in trial expires on 2099-01-01 to keep the demo reusable. The optional issuer creates an actual 30-day trial when you issue your own files. A perpetual license can still contain expiring features.
 
-`restricted.xml` illustrates a stateful trial the preview does not support. Refusing it is expected; use absolute `ExpireDate` for the supported trial workflow.
+`restricted.xml` illustrates a stateful trial the SDK does not support. Refusing it is expected; use absolute `ExpireDate` for the supported trial workflow.
 
 ## Use your own publisher key and licenses
 
@@ -84,7 +84,7 @@ All examples accept the same arguments:
 [license.xml [publisher-key.txt [RSA|ECDSA [feature]]]]
 ```
 
-For RSA, the key file contains Base64 X.509 SubjectPublicKeyInfo DER, as returned by `.NET RSASignature.ExportKeys(true)`. For ECDSA, use an explicit P-256 key and its Babel Base32 public-point encoding. The legacy .NET default 112-bit curve is not supported by this preview.
+For RSA, the key file contains Base64 X.509 SubjectPublicKeyInfo DER, as returned by `.NET RSASignature.ExportKeys(true)`. For ECDSA, use an explicit P-256 key and its Babel Base32 public-point encoding. The legacy .NET default 112-bit curve is not supported by the native SDK.
 
 The examples read the trusted public key from a separate file so you can try your own publisher. In your product, pin that key in the application or in trusted configuration. Never select it from the license document or ship the private signing key. Use a separate publisher key for each product if feature names overlap. Product/version and update-entitlement policy remains the application's responsibility; these examples demonstrate signature, expiry and feature checks.
 
