@@ -90,7 +90,7 @@ The examples read the trusted public key from a separate file so you can try you
 
 ### Issue files with a trial or purchased Babel Licensing SDK
 
-Use the .NET `Babel.Licensing.dll` and `Crypto.dll` from your SDK. See [Client components](https://docs.babelfor.net/licensing/getting-started/client-components) for the Babel Licensing installation workflow.
+Use the protected .NET `Babel.Licensing.dll` from your SDK or the Babel.Licensing NuGet package. The distributed assembly includes its cryptography implementation; no separate `Crypto.dll` is required. See [Client components](https://docs.babelfor.net/licensing/getting-started/client-components) for the Babel Licensing installation workflow.
 
 ```sh
 # .NET 10 SDK; point to the directory containing your Babel Licensing assemblies.
